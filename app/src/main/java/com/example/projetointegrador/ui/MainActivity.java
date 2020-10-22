@@ -1,4 +1,4 @@
-package ui;
+package com.example.projetointegrador.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.projetointegrador.ItensList;
 import com.example.projetointegrador.R;
 
 public class MainActivity extends AppCompatActivity {

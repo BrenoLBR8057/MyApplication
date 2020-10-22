@@ -1,6 +1,5 @@
-package ui;
+package com.example.projetointegrador.ui;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,20 +9,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.TextView;
 
-import com.example.projetointegrador.ui.AddItensList;
+import com.example.projetointegrador.R;
 import com.example.projetointegrador.ui.RecyclerView.adapter.RecyclerViewItensList;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-import DAO.PIDAO;
-import model.Model;
+import com.example.projetointegrador.DAO.PIDAO;
+import com.example.projetointegrador.model.Model;
 
 import static com.example.projetointegrador.ui.Interface.KEY_EDIT_ITENS;
 import static com.example.projetointegrador.ui.Interface.KEY_SAVE_ITENS;
@@ -35,7 +30,6 @@ public class ItensList extends AppCompatActivity {
     private FloatingActionButton fabAddItem;
     private RecyclerView recyclerViewItensList;
     private RecyclerViewItensList adapter;
-    private Model itens;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,30 +40,6 @@ public class ItensList extends AppCompatActivity {
         fabAddItem = findViewById(R.id.fabItensList);
         fabButtnClick();
         configureListView();
-        onResume();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        adapter.setOnItemLongClickListener(new RecyclerViewItensList.MyLongClickListener() {
-            @Override
-            public boolean onItemLongClick(int position, View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(ItensList.this);
-                builder.setMessage("Tem certeza de que deseja excluir ?").setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        new PIDAO().remove(position);
-                    }
-                }).setNegativeButton("Não", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        return;
-                    }
-                });
-                return false;
-            }
-        });
     }
 
     private void fabButtnClick(){

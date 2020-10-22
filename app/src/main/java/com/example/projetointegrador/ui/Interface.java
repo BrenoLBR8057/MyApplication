@@ -1,4 +1,4 @@
-package ui;
+package com.example.projetointegrador.ui;
 
 public interface Interface {
     public final static String KEY_SAVE_ITENS = "SAVE_ITENS";

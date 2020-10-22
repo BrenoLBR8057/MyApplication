@@ -1,7 +1,6 @@
-package ui;
+package com.example.projetointegrador.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -10,21 +9,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.projetointegrador.ItensList;
 import com.example.projetointegrador.R;
 import com.example.projetointegrador.ui.RecyclerView.adapter.RecyclerViewItensList;
 
-import java.util.List;
-
-import DAO.PIDAO;
-import model.Model;
+import com.example.projetointegrador.DAO.PIDAO;
+import com.example.projetointegrador.model.Model;
 
 import static com.example.projetointegrador.ui.Interface.KEY_SAVE_ITENS;
 import static com.example.projetointegrador.ui.Interface.RETURN_CODE_SAVE_ITENS;
 
 public class AddItensList extends AppCompatActivity {
-    private RecyclerView recyclerViewItensList;
-    private RecyclerViewItensList adapter;
     private TextView product;
     private TextView quantify;
     private TextView price;

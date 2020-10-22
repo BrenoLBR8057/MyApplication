@@ -1,9 +1,9 @@
-package DAO;
+package com.example.projetointegrador.DAO;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Model;
+import com.example.projetointegrador.model.Model;
 
 public class PIDAO {
     private static int lastId = 0;
