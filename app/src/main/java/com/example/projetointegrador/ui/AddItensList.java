@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.projetointegrador.R;
 import com.example.projetointegrador.ui.RecyclerView.adapter.RecyclerViewItensList;
@@ -15,8 +16,11 @@ import com.example.projetointegrador.ui.RecyclerView.adapter.RecyclerViewItensLi
 import com.example.projetointegrador.DAO.PIDAO;
 import com.example.projetointegrador.model.Model;
 
+import static com.example.projetointegrador.ui.Interface.KEY_EDIT_ITENS;
 import static com.example.projetointegrador.ui.Interface.KEY_SAVE_ITENS;
+import static com.example.projetointegrador.ui.Interface.REQUEST_CODE_EDIT_ITENS;
 import static com.example.projetointegrador.ui.Interface.RETURN_CODE_SAVE_ITENS;
+import static java.security.AccessController.getContext;
 
 public class AddItensList extends AppCompatActivity {
     private TextView product;
@@ -24,6 +28,8 @@ public class AddItensList extends AppCompatActivity {
     private TextView price;
     private Button apply;
     private Model itens;
+    private RecyclerViewItensList.ViewHolder holder;
+    private RecyclerViewItensList.ClickListener clickListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +38,11 @@ public class AddItensList extends AppCompatActivity {
 
         loadfields();
         buttonClick();
+        getClickListener();
+    }
+
+    public RecyclerViewItensList.ClickListener getClickListener() {
+        return clickListener;
     }
 
     private void loadfields(){
@@ -51,7 +62,6 @@ public class AddItensList extends AppCompatActivity {
                 intent.putExtra(KEY_SAVE_ITENS, updatedItens);
                 setResult(RETURN_CODE_SAVE_ITENS, intent);
                 new PIDAO().insert(itens);
-                startActivity(intent);
                 finish();
             }
         });

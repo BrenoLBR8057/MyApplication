@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,7 @@ import com.example.projetointegrador.R;
 import java.util.List;
 
 import com.example.projetointegrador.model.Model;
+import com.example.projetointegrador.ui.ItemKeyProvider;
 import com.example.projetointegrador.ui.ItensList;
 
 import static com.example.projetointegrador.ui.Interface.KEY_EDIT_ITENS;
@@ -37,6 +40,7 @@ public class RecyclerViewItensList extends RecyclerView.Adapter<RecyclerViewIten
         private MyLongClickListener myLongClickListener;
 
     public RecyclerViewItensList(List<Model> itensList){this.mNotes = itensList;}
+
 
     @NonNull
     @Override
