@@ -1,4 +1,4 @@
-package com.example.supermarket.ui;
+package com.example.supermarket.ui.ui;
 
 public class Constants {
     public static final int REQUEST_SAVE_PRODUCT = 1;

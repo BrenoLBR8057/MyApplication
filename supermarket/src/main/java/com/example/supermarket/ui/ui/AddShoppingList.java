@@ -1,4 +1,4 @@
-package com.example.supermarket.ui;
+package com.example.supermarket.ui.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 

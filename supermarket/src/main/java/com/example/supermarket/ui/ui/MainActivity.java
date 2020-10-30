@@ -1,4 +1,4 @@
-package com.example.supermarket.ui;
+package com.example.supermarket.ui.ui;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,10 +20,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-import static com.example.supermarket.ui.Constants.KEY_EDIT_PRODUCT;
-import static com.example.supermarket.ui.Constants.KEY_SAVE_PRODUCT;
-import static com.example.supermarket.ui.Constants.REQUEST_EDIT_PRODUCT;
-import static com.example.supermarket.ui.Constants.REQUEST_SAVE_PRODUCT;
+import static com.example.supermarket.ui.ui.Constants.KEY_EDIT_PRODUCT;
+import static com.example.supermarket.ui.ui.Constants.KEY_SAVE_PRODUCT;
+import static com.example.supermarket.ui.ui.Constants.REQUEST_EDIT_PRODUCT;
+import static com.example.supermarket.ui.ui.Constants.REQUEST_SAVE_PRODUCT;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
