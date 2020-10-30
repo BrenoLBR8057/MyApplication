@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.Supermarket.R;
 import com.example.supermarket.ui.database.AppDatabase;
@@ -31,12 +32,16 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fabAminActivity;
     private AdapterShoppingList adapter;
     private int itemClickPosition;
+    private TextView textFinalTotal;
+    private Supermarket supermarket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        textFinalTotal = findViewById(R.id.textTotalMainActivity);
+        textFinalTotal.setText("0");
         generateList();
         configureRecyclerView();
         buttonClick();
@@ -87,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void generateList() {
+        textFinalTotal.setText(supermarket.getTotalAsString());
         supermarketList = AppDatabase.getInstance(getApplicationContext()).supermarketDAO().getAll();
     }
 

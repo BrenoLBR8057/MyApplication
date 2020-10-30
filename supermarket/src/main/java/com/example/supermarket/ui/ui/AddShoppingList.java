@@ -81,7 +81,8 @@ public class AddShoppingList extends AppCompatActivity {
         double price = Double.parseDouble(editTextPrice.getText().toString());
 
         total = price * quantify;
-        return new Supermarket(product, quantify, price, total);
+        double totalFinal =+ total;
+        return new Supermarket(product, quantify, price, total, totalFinal);
     }
 
     private void loadViewss() {

@@ -10,6 +10,8 @@ import com.example.supermarket.ui.model.Supermarket;
 
 import java.util.List;
 
+import static android.icu.text.MessagePattern.ArgType.SELECT;
+
 @Dao
 public interface SupermarketDAO {
     @Insert
@@ -20,4 +22,6 @@ public interface SupermarketDAO {
     void update(Supermarket supermarket);
     @Query("SELECT * FROM Supermarket")
     List<Supermarket> getAll();
+    @Query("SELECT * FROM Supermarket")
+    List<Supermarket> getTotalFinal();
 }

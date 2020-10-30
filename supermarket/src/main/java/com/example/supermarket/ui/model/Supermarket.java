@@ -17,12 +17,23 @@ public class Supermarket implements Serializable {
     private double price;
     @ColumnInfo(name = "total")
     private double total;
+    @ColumnInfo(name = "finalTotal")
+    private double finalTotal;
 
-    public Supermarket(String product, int quantify, double price, double total){
+    public Supermarket(String product, int quantify, double price, double total, double finalTotal){
         this.price = price;
         this.product = product;
         this.quantify = quantify;
         this.total = total;
+        this.finalTotal = finalTotal;
+    }
+
+    public double getFinalTotal() {
+        return finalTotal;
+    }
+
+    public void setFinalTotal(double finalTotal) {
+        this.finalTotal += finalTotal;
     }
 
     public String getTotalAsString() {

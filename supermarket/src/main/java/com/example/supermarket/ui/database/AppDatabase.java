@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.example.supermarket.ui.dao.SupermarketDAO;
 import com.example.supermarket.ui.model.Supermarket;
 
-@Database(entities = {Supermarket.class}, version = 3, exportSchema = false)
+@Database(entities = {Supermarket.class}, version = 4, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
     private static AppDatabase instance;
     public abstract SupermarketDAO supermarketDAO();
