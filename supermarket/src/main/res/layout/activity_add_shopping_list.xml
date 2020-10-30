@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AddShoppingList">
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/btnSave"
@@ -35,7 +34,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Insira a quantidade do produto"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="@+id/editTextProduct"
         app:layout_constraintStart_toStartOf="@+id/editTextProduct"
         app:layout_constraintTop_toBottomOf="@+id/editTextProduct" />
@@ -47,7 +46,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="Insira o preço do produto"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="@+id/editTextQuantify"
         app:layout_constraintStart_toStartOf="@+id/editTextQuantify"
         app:layout_constraintTop_toBottomOf="@+id/editTextQuantify" />
